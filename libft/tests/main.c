@@ -48,6 +48,17 @@ int	main(int ac, char* av[])
     printf("itoa(123) : %s\n", test_itoa);
     free(test_itoa);
 
+    printf("\n---------- TEST FT_MEMSET ----------\n");
+    char s_memset[] = "I love pizza";
+    printf("s_memset (before) : %s\n", s_memset);
+    ft_memset(s_memset + 7, '.', 5);
+    printf("s_memset (after)  : %s\n", s_memset);
+     
+    printf("\n---------- TEST FT_STRNCMP ----------\n");
+    char s1_strncmp[] = "this i the test 1";
+    char s2_strncmp[] = "this i the test 2";
+    printf("strncmp(s1, s2) : %d\n", 
+            ft_strncmp(s1_strncmp, s2_strncmp, 17));
 
     return 0;
 }
