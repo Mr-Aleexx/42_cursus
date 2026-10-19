@@ -1,7 +1,7 @@
 NAME	= run_tests
 
 CC		= cc
-CFLAGS	= -Wall -Wextra -I..
+CFLAGS	= -Wall -Wextra -I.. -g
 LDFLAGS	= -L.. -lft
 
 SRCS	= main.c

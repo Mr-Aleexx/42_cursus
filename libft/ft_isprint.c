@@ -2,7 +2,5 @@
 
 int	ft_isprint(int c)
 {
-	(void)c;
-	/* TODO: implement ft_isprint */
-	return (0);
+  return (c >= 7 && c <= 126);
 }
