@@ -2,7 +2,5 @@
 
 int	ft_isdigit(int c)
 {
-	(void)c;
-	/* TODO: implement ft_isdigit */
-	return (0);
+    return (c >= '1' && c <= '9');
 }

@@ -1,9 +1,19 @@
 #include "libft.h"
 
+// returns the last occurence of c
 char	*ft_strrchr(const char *s, int c)
 {
-	(void)s;
-	(void)c;
-	/* TODO: implement ft_strrchr */
-	return (NULL);
+    char    *occ;
+	if (!s)
+        return (NULL);
+
+    occ = NULL;
+    while(*s)
+    {
+        if (*s == c)
+            occ = (char*)s;
+        s++;
+    }
+
+    return (occ);
 }

@@ -2,7 +2,5 @@
 
 int	ft_isascii(int c)
 {
-	(void)c;
-	/* TODO: implement ft_isascii */
-	return (0);
+	return (c >= 0 && c <= 127);
 }

@@ -2,8 +2,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	(void)s;
-	(void)c;
-	/* TODO: implement ft_strchr */
-	return (NULL);
+	if (!s)
+        return (NULL);
+
+    while(*s)
+    {
+        if (*s == c)
+            return ((char*)s);
+        s++;
+    }
+    return (NULL);
 }
