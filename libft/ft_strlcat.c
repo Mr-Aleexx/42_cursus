@@ -1,0 +1,10 @@
+#include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	(void)dst;
+	(void)src;
+	(void)size;
+	/* TODO: implement ft_strlcat */
+	return (0);
+}
