@@ -1,15 +1,9 @@
 *This project has been created as part of the 42 curriculum by <login>.*
 
 ## Description
-TODO
+A collection of all of my 42 cursus projects
 
 ## Instructions
-```
-make
-cd tests && make run
-```
+Go into the project you like a do what's said to compile and execute
 
 ## Resources
-TODO (include how AI was used)
-# 42_cursus
-# 42_cursus
