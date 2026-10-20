@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/20 15:00:49 by alex              #+#    #+#             */
+/*   Updated: 2026/10/20 15:09:00 by alex             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
 int	main(int ac, char* av[])
@@ -58,7 +70,22 @@ int	main(int ac, char* av[])
     char s1_strncmp[] = "this i the test 1";
     char s2_strncmp[] = "this i the test 2";
     printf("strncmp(s1, s2) : %d\n", 
-            ft_strncmp(s1_strncmp, s2_strncmp, 17));
+            ft_strncmp(s1_strncmp, s2_strncmp, 17)); // 17 is the last char
+ 
+    printf("\n---------- TEST 'IS' FUNCTIONS ----------\n");
+    printf("isalnum('a') : %d\n", ft_isalnum('a'));
+    printf("isalnum(' ') : %d\n", ft_isalnum(' '));
+
+    printf("\n---------- TEST FT_MEMCHR ----------\n");
+    printf("memchr('This is a @ and it is cool', '@', 12)\n-> : %s\n", 
+            (char*)ft_memchr("This is a @ and it is cool", '@', 10));
+
+    printf("\n---------- TEST B_ZERO ----------\n");
+    char s[100] = "test";
+    printf("Before : %s\n", s);
+    ft_bzero(s, 50);
+    printf("After : %s\n", s);
+    printf("%s\n", s);
 
     return 0;
 }

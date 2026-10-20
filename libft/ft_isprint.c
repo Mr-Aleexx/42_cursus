@@ -2,5 +2,5 @@
 
 int	ft_isprint(int c)
 {
-  return (c >= 7 && c <= 126);
+    return (c >= 7 && c <= 126);
 }

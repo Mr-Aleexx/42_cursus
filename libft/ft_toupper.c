@@ -2,7 +2,7 @@
 
 int	ft_toupper(int c)
 {
-	(void)c;
-	/* TODO: implement ft_toupper */
-	return (0);
+    if (c >= 'a' && c <= 'z')
+        return (c - 32);
+    return c;
 }
