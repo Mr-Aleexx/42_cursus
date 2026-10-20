@@ -6,7 +6,7 @@
 /*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:00:49 by alex              #+#    #+#             */
-/*   Updated: 2026/10/20 15:09:00 by alex             ###   ########.fr       */
+/*   Updated: 2026/10/20 20:18:50 by ahazet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,33 @@ int	main(int ac, char* av[])
 
     printf("\n---------- TEST FT_MEMCHR ----------\n");
     printf("memchr('This is a @ and it is cool', '@', 12)\n-> : %s\n", 
-            (char*)ft_memchr("This is a @ and it is cool", '@', 10));
+            (char*)ft_memchr("This is a @ and it is cool", '@', 12));
 
     printf("\n---------- TEST B_ZERO ----------\n");
     char s[100] = "test";
     printf("Before : %s\n", s);
     ft_bzero(s, 50);
     printf("After : %s\n", s);
-    printf("%s\n", s);
 
-    return 0;
+    printf("\n---------- TEST FT_STRDUP ----------\n");
+    char    s_strdup[100] = "This is the string to dup";
+    char    *dup_strdup;
+    dup_strdup = ft_strdup(s_strdup);
+    printf("dup_strup : %s\n", dup_strdup);
+	free(dup_strdup);
+
+    printf("\n---------- TEST FT_SUBSTR ----------\n");
+	char	s_substr[] = "I love cats so much, my cat Wilson is so cute";
+	char	*s_subsubstr;
+	s_subsubstr = ft_substr(s_substr, 7, 4);
+	printf("s_subsubstr : %s\n", s_subsubstr);
+	free(s_subsubstr);
+
+    printf("\n---------- TEST FT_STRTRIM ----------\n");
+	char	s_strtrim[] = "\n\tI#love.ca\tts\n";
+	char	*s_trimmed;
+	s_trimmed = ft_strtrim(s_strtrim, "\t\n");
+	printf("trimmed string : %s\n", s_trimmed);
+
+    return (0);
 }
