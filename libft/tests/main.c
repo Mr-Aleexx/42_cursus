@@ -12,6 +12,9 @@
 
 #include "../libft.h"
 
+extern char    mapi_callback(unsigned int index, char c);
+extern void    iteri_callback(unsigned int index, char *c);
+
 int	main(int ac, char* av[])
 {
     (void) ac;
@@ -105,6 +108,20 @@ int	main(int ac, char* av[])
 	char	*s_trimmed;
 	s_trimmed = ft_strtrim(s_strtrim, "\t\n");
 	printf("trimmed string : %s\n", s_trimmed);
+    free(s_trimmed);
 
+    printf("\n---------- TEST FT_STRMAPI ----------\n");
+    char    s_strmapi[] = "I like my cat Wilson";
+    char    *ret_strmapi;
+    printf("Before : %s\n", s_strmapi);
+    ret_strmapi = ft_strmapi(s_strmapi, mapi_callback);
+    printf("After : %s\n", ret_strmapi);
+    free(ret_strmapi);
+
+    printf("\n---------- TEST FT_STRITERI ----------\n");
+    char    s_striteri[] = "I like my cat Wilson";
+    printf("Before : %s\n", s_striteri);
+    ft_striteri(s_striteri, iteri_callback);
+    printf("After : %s\n", s_striteri);
     return (0);
 }

@@ -16,7 +16,8 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -I.. -g
 LDFLAGS	= -L.. -lft
 
-SRCS	= main.c
+SRCS	= main.c \
+		  callbacks.c
 OBJS	= $(SRCS:.c=.o)
 
 all: $(NAME)
