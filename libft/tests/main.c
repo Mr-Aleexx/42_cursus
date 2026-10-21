@@ -6,7 +6,7 @@
 /*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:00:49 by alex              #+#    #+#             */
-/*   Updated: 2026/10/20 20:18:50 by ahazet           ###   ########.fr       */
+/*   Updated: 2026/10/21 18:49:52 by ahazet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(int ac, char* av[])
     printf("\n---------- TEST FT_MEMSET ----------\n");
     char s_memset[] = "I love pizza";
     printf("s_memset (before) : %s\n", s_memset);
-    ft_memset(s_memset + 7, '.', 5);
+    ft_memset(s_memset, '.', 2);
     printf("s_memset (after)  : %s\n", s_memset);
      
     printf("\n---------- TEST FT_STRNCMP ----------\n");
@@ -123,5 +123,37 @@ int	main(int ac, char* av[])
     printf("Before : %s\n", s_striteri);
     ft_striteri(s_striteri, iteri_callback);
     printf("After : %s\n", s_striteri);
+
+    printf("\n---------- TEST FT_STRNSTR ----------\n");
+	char 	s_strnstr[] = "Alex Leonie Colas";
+	char	*needle = "Leo";
+	printf("needle : %s of haystack : %s\n", 
+			ft_strnstr(s_strnstr, needle, 8), 
+			s_strnstr);
+	printf("%s\n", ft_strnstr("hotdog", "dog", 10));
+    printf("%s\n", ft_strnstr("hotdog", "dog", 3));
+    printf("%s\n", ft_strnstr("hotdog", "dog", 1));
+    printf("%s\n", ft_strnstr("hotdog", "dol", 3));
+    printf("%s\n", ft_strnstr("hotdog", "dol", 10));
+    printf("%s\n", ft_strnstr("hotdog", "dol", 1));
+    printf("\n");
+    printf("%s\n", strnstr("hotdog", "dog", 10));
+    printf("%s\n", strnstr("hotdog", "dog", 3));
+    printf("%s\n", strnstr("hotdog", "dog", 1));
+    printf("%s\n", strnstr("hotdog", "dol", 3));
+    printf("%s\n", strnstr("hotdog", "dol", 10));
+    printf("%s\n", strnstr("hotdog", "dol", 1));
+
+    printf("\n---------- TEST FT_PUTNBR_FD ----------\n");
+	ft_putnbr_fd(123, 1);
+	ft_putendl_fd("\nAlex", 1);
+
+    printf("\n---------- TEST FT_MEMCMP ----------\n");
+    char s1_memcmp[] = "this i the test 1";
+    char s2_memcmp[] = "this i the test 1";
+    printf("ft_memcmp(s1, s2) : %d\n", 
+            ft_strncmp(s1_memcmp, s2_memcmp, 100)); // 17 is the last char
+	
+
     return (0);
 }

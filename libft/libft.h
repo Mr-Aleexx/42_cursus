@@ -5,6 +5,8 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <bsd/string.h>
+# include <limits.h>
 
 typedef struct s_list
 {

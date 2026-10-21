@@ -6,7 +6,7 @@
 #    By: ahazet <your@email.com>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/20 17:32:46 by ahazet            #+#    #+#              #
-#    Updated: 2026/10/20 17:32:48 by ahazet           ###   ########.fr        #
+#    Updated: 2026/10/21 17:16:53 by ahazet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= run_tests
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -I.. -g
-LDFLAGS	= -L.. -lft
+LDFLAGS	= -L.. -lft -lbsd
 
 SRCS	= main.c \
 		  callbacks.c
