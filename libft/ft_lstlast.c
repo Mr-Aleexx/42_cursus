@@ -2,7 +2,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	(void)lst;
-	/* TODO: implement ft_lstlast */
-	return (NULL);
+	if (!lst)
+		return (NULL);
+	while(lst && lst->next)
+		lst = lst->next;
+	return (lst);
 }

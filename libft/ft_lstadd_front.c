@@ -2,7 +2,13 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	(void)lst;
-	(void)new;
-	/* TODO: implement ft_lstadd_front */
+	if (!new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	new->next = *lst;
+	*lst = new;
 }

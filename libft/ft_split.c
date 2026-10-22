@@ -80,15 +80,3 @@ char	**ft_split(const char *str, char *charset)
 	return (strs);
 }
 
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str1[] = "Bo?s.scs";
-	char	str2[] = "?.c";
-
-	printf("%s\n", ft_split(str1, str2)[0]);
-}
-*/
-
