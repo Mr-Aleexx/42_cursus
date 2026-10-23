@@ -9,7 +9,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	
 	s_len = ft_strlen(s);
 	if (start > s_len)
-		return (NULL);
+    {
+        return (ft_strdup(""));
+    }
+    if (start + len > s_len)
+    {
+        len = s_len - start;
+    }
 	ret = malloc(sizeof(char) * (len + 1));
 	if (!ret)
 		return (NULL);

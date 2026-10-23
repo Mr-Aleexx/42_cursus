@@ -1,47 +1,62 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/23 13:50:51 by alex              #+#    #+#             */
+/*   Updated: 2026/10/23 13:53:14 by alex             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int int_size(int n)
 {
-    int i;
+    int		i;
+	long	nb;
 
+	nb = n;
     i = 0;
-    if (n < 0)
+    if (nb <= 0)
     {
-        n -= n;
+        i++;
+        nb *= -1;
+    }
+    while(nb > 0)
+    {
+        nb /= 10;
         i++;
     }
-    while(n)
-    {
-        n /= 10;
-        i++;
-    }
-    return i;
+    return (i);
 }
 
 char	*ft_itoa(int n)
 {
-    char *buffer;
-    char local_buffer[17]; // lol
-    int i;
-    int j;
+    char	*buffer;
+    int		i;
+	long	nb;
 
-    buffer = malloc(sizeof(char) * int_size(n) + 1);
+	nb = n;
+	i = int_size(n);
+    buffer = malloc(sizeof(char) * (i + 1));
     if (!buffer)
+	{
         return (NULL);
-    i = -1;
-    j = -1;
-    if (n < 0)
+	}
+	buffer[i] = '\0';
+    if (nb < 0)
     {
-        local_buffer[++i] = '-';
-        n = -n;
+        buffer[--i] = '-';
+        nb = -nb;
     }
-    while(n)
+    while(nb > 0)
     {
-        local_buffer[++i] = (n % 10) + '0';
-        n /= 10;
+        buffer[--i] = (nb % 10) + '0';
+        nb /= 10;
     }
-    while(i >= 0)
-        buffer[++j] = local_buffer[i--];
-    buffer[++j] = '\0';
+	if (n == 0)
+		buffer[0] = '0';
     return (buffer);
 }

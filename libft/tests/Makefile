@@ -6,18 +6,21 @@
 #    By: ahazet <your@email.com>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/20 17:32:46 by ahazet            #+#    #+#              #
-#    Updated: 2026/10/21 17:16:53 by ahazet           ###   ########.fr        #
+#    Updated: 2026/10/23 15:09:56 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= run_tests
+VALGRIND = valgrind
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -I.. -g
 LDFLAGS	= -L.. -lft -lbsd
+VALGRIND_FLAG = --leak-check=full
 
 SRCS	= main.c \
-		  callbacks.c
+		  callbacks.c \
+		  utils.c
 OBJS	= $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -33,6 +36,9 @@ lib:
 
 run: $(NAME)
 	./$(NAME)
+
+debmem: $(NAME)
+	$(VALGRIND) $(VALGRIND_FLAG) ./$(NAME)
 
 clean:
 	$(RM) $(OBJS)

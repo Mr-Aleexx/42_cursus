@@ -13,3 +13,25 @@ void    iteri_callback(unsigned int index, char *c)
             *c, *c + 1, index);
     *c += 1;
 }
+
+void	lst_iter_f(void *s)
+{
+	char	*p;
+
+	p = (char*)s;
+	p[0] = 'a';
+}
+
+void	*lst_map_f(void *s)
+{
+	char	*p;
+
+	p = (char*)s;
+	p[0] = 'b';
+	return (p);
+}
+
+void	free_lst(void *s)
+{
+	free(s);
+}

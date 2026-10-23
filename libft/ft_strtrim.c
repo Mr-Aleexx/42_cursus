@@ -6,7 +6,7 @@
 /*   By: ahazet <alex.hazet@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 19:40:54 by ahazet            #+#    #+#             */
-/*   Updated: 2026/10/20 20:10:11 by ahazet           ###   ########.fr       */
+/*   Updated: 2026/10/23 15:24:22 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,21 @@ static int	is_charset(const char *charset, char c)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*ret;
-	int		start;
-	int		end;
+	size_t	start;
+	size_t	end;
 
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
-	end = ft_strlen(s1) - 1;
-	while(s1[start] && is_charset(set, s1[start]))
+	end = ft_strlen(s1);
+	while (s1[start] && is_charset(set, s1[start]))
 		start++;
-	while(s1[end] && is_charset(set, s1[end]))
+	while (end > start && is_charset(set, s1[end - 1]))
 		end--;
 	ret = malloc(sizeof(char) * (end - start + 1));
 	if (!ret)
 		return (NULL);
-	ft_memcpy(ret, s1 + start, end + 1);
-	ret[end + 1] = '\0';
+	ft_memcpy(ret, s1 + start, end - start);
+	ret[end - start] = '\0';
 	return (ret);
 }
