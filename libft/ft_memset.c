@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:01:17 by alex              #+#    #+#             */
-/*   Updated: 2026/10/21 18:56:40 by ahazet           ###   ########.fr       */
+/*   Updated: 2026/10/27 14:39:46 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ void	*ft_memset(void *ptr, int c, size_t n)
 		*p++ = (unsigned char)c;
 	return (ptr);
 }
-

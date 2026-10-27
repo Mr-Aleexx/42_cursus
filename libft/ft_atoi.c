@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:00:55 by alex              #+#    #+#             */
-/*   Updated: 2026/10/20 17:35:28 by ahazet           ###   ########.fr       */
+/*   Updated: 2026/10/27 14:23:24 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_isspace(const char *c)
 		return (0);
 }
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	result;
@@ -45,4 +45,3 @@ int ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-

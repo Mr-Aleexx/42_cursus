@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:00:58 by alex              #+#    #+#             */
-/*   Updated: 2026/10/20 17:32:54 by ahazet           ###   ########.fr       */
+/*   Updated: 2026/10/27 14:23:29 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-    unsigned char    *s_ptr = (unsigned char *)s;
+	unsigned char	*s_ptr;
 
-    while(n--)
-    {
-        *s_ptr++ = '\0';
-    }
+	s_ptr = (unsigned char *)s;
+	while (n--)
+		*s_ptr++ = '\0';
 }

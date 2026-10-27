@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:01:30 by alex              #+#    #+#             */
-/*   Updated: 2026/10/20 15:01:30 by alex             ###   ########.fr       */
+/*   Updated: 2026/10/27 14:42:35 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ static int	ft_word_len(const char *str, char *charset)
 	return (len);
 }
 
-
 char	**ft_split(const char *str, char *charset)
 {
 	char	**strs;
@@ -79,4 +78,3 @@ char	**ft_split(const char *str, char *charset)
 	strs[j] = NULL;
 	return (strs);
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahazet <alex.hazet@gmail.com>              +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 17:26:51 by ahazet            #+#    #+#             */
-/*   Updated: 2026/10/21 17:29:53 by ahazet           ###   ########.fr       */
+/*   Updated: 2026/10/27 14:31:07 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-		if (n < 0)
+	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
 		if (n == INT_MIN)

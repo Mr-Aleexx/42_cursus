@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahazet <alex.hazet@gmail.com>              +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 19:40:54 by ahazet            #+#    #+#             */
-/*   Updated: 2026/10/23 15:24:22 by alex             ###   ########.fr       */
+/*   Updated: 2026/10/27 14:42:07 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
 static int	is_charset(const char *charset, char c)
 {
-	while(*charset)
+	while (*charset)
 	{
 		if (*charset == c)
 			return (1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:01:36 by alex              #+#    #+#             */
-/*   Updated: 2026/10/20 15:01:37 by alex             ###   ########.fr       */
+/*   Updated: 2026/10/27 14:44:05 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 char	*ft_strchr(const char *s, int c)
 {
 	if (!s)
-        return (NULL);
-
-    while(*s)
-    {
-        if (*s == c)
-            return ((char*)s);
-        s++;
-    }
-    return (NULL);
+		return (NULL);
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	return (NULL);
 }

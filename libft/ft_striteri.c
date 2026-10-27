@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:01:43 by alex              #+#    #+#             */
-/*   Updated: 2026/10/20 15:01:43 by alex             ###   ########.fr       */
+/*   Updated: 2026/10/27 14:44:23 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{ 
-    int     i;
+{
+	int	i;
 
-    if (!s)
-        return ;
-    i = -1;
-    while(s[++i])
-    {
-        f(i, &s[i]);
-    }
+	if (!s)
+		return ;
+	i = -1;
+	while (s[++i])
+	{
+		f(i, &s[i]);
+	}
 }
