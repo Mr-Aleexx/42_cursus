@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:00:49 by alex              #+#    #+#             */
-/*   Updated: 2026/10/25 17:32:42 by alex             ###   ########.fr       */
+/*   Updated: 2026/10/27 18:13:55 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,25 @@ void test_part_1()
 	printf( BOLD RED "\n---------- TEST PART_1 ----------\n" RESET);
 	printf("\n---------- TEST FT_IS* ----------\n");
 	printf("%-20s : %d | %-20s : %d\n",
-		   "is_alpha('8')", ft_isalpha('8'),
-		   "is_alpha('a')", ft_isalpha('a'));
+		"is_alpha('8')", ft_isalpha('8'),
+		"is_alpha('a')", ft_isalpha('a'));
 	printf("%-20s : %d | %-20s : %d\n",
-		   "is_digit('a')", ft_isdigit('a'),
-		   "is_digit('8')", ft_isdigit('8'));
+		"is_digit('a')", ft_isdigit('a'),
+		"is_digit('8')", ft_isdigit('8'));
 	printf("%-20s : %d | %-20s : %d\n",
-		   "is_alnum('\\n')", ft_isalnum('\n'),
-		   "is_alnum('a')", ft_isalnum('a'));
+		"is_alnum('\\n')", ft_isalnum('\n'),
+		"is_alnum('a')", ft_isalnum('a'));
 	printf("%-20s : %d | %-20s : %d\n",
-		   "is_ascii(129)", ft_isascii(129),
-		   "is_ascii('a')", ft_isascii('a'));
+		"is_ascii(129)", ft_isascii(129),
+		"is_ascii('a')", ft_isascii('a'));
 	printf("%-20s : %d | %-20s : %d\n",
-		   "is_print('\\0')", ft_isprint('\0'),
-		   "is_print('a')", ft_isprint('a'));
+		"is_print('\\0')", ft_isprint('\0'),
+		"is_print('a')", ft_isprint('a'));
 
 	printf("\n---------- TEST FT_STRLEN ----------\n");
 	char	*s_strlen = "123";
 	printf("%-20s : %zu\n",
-		   "strlen(s_strlen) ", ft_strlen(s_strlen));
+		"strlen(s_strlen) ", ft_strlen(s_strlen));
 
 	printf("\n---------- TEST FT_MEMSET ----------\n");
 	char s_memset[] = "I love pizza";
@@ -75,71 +75,71 @@ void test_part_1()
 	char dest_strlcpy[100];
 	size_t size_copy = 10;
 	printf("%-10s %s \n%-10s %s\n%-10s %zu...\n",
-		   "copying", src_strlcpy,
-		   "to", "dest_strlcpy",
-		   "at", size_copy);
+		"copying", src_strlcpy,
+		"to", "dest_strlcpy",
+		"at", size_copy);
 	ft_strlcpy(dest_strlcpy, src_strlcpy, size_copy);
 	printf("%-10s : %s\n",
-		   "dest", dest_strlcpy);
+		"dest", dest_strlcpy);
 
 	printf("\n---------- TEST FT_STRLCAT ----------\n");
 	char src_strlcat[] = "hijklm";
 	char dest_strlcat[100] = "abcdefg";
 	size_t size_cat = 10;
 	printf("%-10s %s \n%-10s %s\n%-10s %zu...\n",
-		   "concat", src_strlcat,
-		   "to", dest_strlcat,
-		   "at", size_cat);
+		"concat", src_strlcat,
+		"to", dest_strlcat,
+		"at", size_cat);
 	ft_strlcat(dest_strlcat, src_strlcat, size_cat);
 	printf("%-10s : %s\n",
-		   "dest", dest_strlcat);
+		"dest", dest_strlcat);
 
 	printf("\n---------- TEST FT_TO ----------\n");
 	printf("%-12s : %c | %-12s : %c\n",
-		   "to_upper('A')", ft_toupper('A'),
-		   "to_upper('a')", ft_toupper('a'));
+		"to_upper('A')", ft_toupper('A'),
+		"to_upper('a')", ft_toupper('a'));
 	printf("%-12s : %c | %-12s : %c\n",
-		   "to_lower('A')", ft_tolower('A'),
-		   "to_lower('a')", ft_tolower('a'));
+		"to_lower('A')", ft_tolower('A'),
+		"to_lower('a')", ft_tolower('a'));
 
 	printf("\n---------- TEST STRRCHR ----------\n");
 	printf("Last  occurence of z in 'i love pizza', %s\n",
-		   ft_strrchr("i love pizza", 'z'));
+		ft_strrchr("i love pizza", 'z'));
 	printf("First occurence of z in 'i love pizza', %s\n",
-		   ft_strchr("i love pizza", 'z'));
+		ft_strchr("i love pizza", 'z'));
 
 	printf("\n---------- TEST FT_STRNCMP ----------\n");
 	char s1_strncmp[] = "this i the test 1";
 	char s2_strncmp[] = "this i the test 2";
 	size_t size_strncmp = ft_strlen(s1_strncmp);
 	printf("%-10s %s\n%-10s %s\n"
-		   "%-10s %*s\n%-10s %d\n",
-		   "comparing", s1_strncmp,
-		   "with", s2_strncmp,
-		   "until", (int)size_strncmp, "^",
-		   "result", ft_strncmp(s1_strncmp, s2_strncmp, size_strncmp));
+		"%-10s %*s\n%-10s %d\n",
+		"comparing", s1_strncmp,
+		"with", s2_strncmp,
+		"until", (int)size_strncmp, "^",
+		"result", ft_strncmp(s1_strncmp, s2_strncmp, size_strncmp));
 
 	printf("\n---------- TEST MEMCHR ----------\n");
 	printf("First occurence of z in 'i love pizza', %s\n",
-		   (char *)ft_memchr("i love pizza", 'z', 1));
+		(char *)ft_memchr("i love pizza", 'z', 1));
 
 	printf("\n---------- TEST FT_MEMCMP ----------\n");
 	char s1_memcmp[] = "this i the test 1";
 	char s2_memcmp[] = "this i the test 2";
 	size_t size_memcmp = ft_strlen(s1_memcmp) - 4;
 	printf("%-10s %s\n%-10s %s\n"
-		   "%-10s %*s\n%-10s %d\n",
-		   "comparing", s1_memcmp,
-		   "with", s2_memcmp,
-		   "until", (int)size_memcmp, "^",
-		   "result", ft_strncmp(s1_memcmp, s2_memcmp, size_memcmp));
+		"%-10s %*s\n%-10s %d\n",
+		"comparing", s1_memcmp,
+		"with", s2_memcmp,
+		"until", (int)size_memcmp, "^",
+		"result", ft_strncmp(s1_memcmp, s2_memcmp, size_memcmp));
 
 	printf("\n---------- TEST FT_STRNSTR ----------\n");
 	char 	s_strnstr[] = "Alex Leonie Colas";
 	char	*needle = "Leo";
 	printf("needle : %s of haystack : %s\n",
-		   ft_strnstr(s_strnstr, needle, 8),
-		   s_strnstr);
+		ft_strnstr(s_strnstr, needle, 8),
+		s_strnstr);
 
 	printf("\n---------- TEST ATOI ----------\n");
 	printf("%-20s : %d\n", "atoi('123')", ft_atoi("123"));
@@ -176,9 +176,9 @@ void test_part_2()
 	int until_substr = 10;
 	s_subsubstr = ft_substr(s_substr, index_substr, until_substr);
 	printf("%-10s : %s\n%-10s : %*s%*s\n%-10s : %s\n",
-		   "string", s_substr,
-		   "substring", index_substr + 1, "^", until_substr - 1, "^",
-		   "result", s_subsubstr);
+		"string", s_substr,
+		"substring", index_substr + 1, "^", until_substr - 1, "^",
+		"result", s_subsubstr);
 	free(s_subsubstr);
 
 	printf("\n---------- TEST FT_STRJOIN ----------\n");
@@ -187,9 +187,9 @@ void test_part_2()
 	char *s_joined;
 	s_joined = ft_strjoin(s_join1, s_join2);
 	printf("%-10s : %s\n%-10s : %s\n%-10s : %s\n",
-		   "Joining", s_join1,
-		   "with", s_join2,
-		   "result", s_joined);
+		"Joining", s_join1,
+		"with", s_join2,
+		"result", s_joined);
 	free(s_joined);
 
 	printf("\n---------- TEST FT_STRTRIM ----------\n");
@@ -198,9 +198,9 @@ void test_part_2()
 	char s_charset_trim[] = "#";
 	s_trimmed = ft_strtrim(s_strtrim, s_charset_trim);
 	printf("%-10s : %s\n%-10s : %s\n%-10s : %s\n",
-		   "Trimming", s_strtrim,
-		   "with", s_charset_trim,
-		   "result", s_trimmed);
+		"Trimming", s_strtrim,
+		"with", s_charset_trim,
+		"result", s_trimmed);
 	free(s_trimmed);
 
 	printf("\n---------- TEST FT_SPLIT ----------\n");
@@ -223,7 +223,7 @@ void test_part_2()
 
 	printf("\n---------- TEST FT_STRMAPI ----------\n");
 	char    s_strmapi[] = "I like my cat Wilson";
-	char    *ret_strmapi;
+	char   *ret_strmapi;
 	printf("Before : %s\n", s_strmapi);
 	ret_strmapi = ft_strmapi(s_strmapi, mapi_callback);
 	printf("After : %s\n", ret_strmapi);
