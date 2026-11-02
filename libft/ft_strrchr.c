@@ -15,16 +15,17 @@
 // returns the last occurence of c
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*occ;
+	char	char_c;
+	int		i;
 
-	if (!s)
-		return (NULL);
-	occ = NULL;
-	while (*s)
+	char_c = (char)c;
+	i = ft_strlen(s);
+	s += i;
+	while (i-- >= 0)
 	{
-		if (*s == c)
-			occ = (char *)s;
-		s++;
+		if (*s == char_c)
+			return ((char *)s);
+		s--;
 	}
-	return (occ);
+	return (NULL);
 }

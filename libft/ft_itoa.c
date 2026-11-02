@@ -6,13 +6,13 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 13:50:51 by alex              #+#    #+#             */
-/*   Updated: 2026/10/27 14:41:51 by alex             ###   ########.fr       */
+/*   Updated: 2026/11/02 19:44:54 by ahazet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	int_size(int n)
+static int	int_size(long n)
 {
 	int		i;
 	long	nb;
@@ -39,16 +39,14 @@ char	*ft_itoa(int n)
 	long	nb;
 
 	nb = n;
-	i = int_size(n);
+	i = int_size(nb);
 	buffer = malloc(sizeof(char) * (i + 1));
 	if (!buffer)
-	{
 		return (NULL);
-	}
 	buffer[i] = '\0';
 	if (nb < 0)
 	{
-		buffer[--i] = '-';
+		buffer[0] = '-';
 		nb = -nb;
 	}
 	while (nb > 0)

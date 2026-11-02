@@ -18,7 +18,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ret;
 
-	ret = malloc(nmemb * size);
+	if (nmemb > 0)
+	{
+		if (SIZE_MAX / nmemb < size)
+			return (NULL);
+	}
+	ret = malloc((size_t)(nmemb * size));
 	if (!ret)
 		return (NULL);
 	ft_memset(ret, 0, nmemb * size);
