@@ -207,7 +207,7 @@ void test_part_2()
 	printf("string : my.name/is_alex:test\n");
 	printf("charset : ./_\n");
 	char *s_split = "my.name/is_alex:test";
-	char *charset = "./_";
+	char charset = '.';
 	char **s_splitted = ft_split(s_split, charset);
 	for (int i = 0 ; s_splitted[i] != NULL; i++)
 		printf("string splitted[%d] : %s\n", i, s_splitted[i]);
