@@ -14,12 +14,15 @@
 
 int	ft_putunbr_fd(unsigned int n, int fd)
 {
+	int	i;
+
+	i = 0;
 	if (n < 10)
 		ft_putchar_fd(n + '0', fd);
 	else
 	{
-		ft_putunbr_fd(n / 10, fd);
+		i += ft_putunbr_fd(n / 10, fd);
 		ft_putunbr_fd(n % 10, fd);
 	}
-	return (1);
+	return (i + 1);
 }

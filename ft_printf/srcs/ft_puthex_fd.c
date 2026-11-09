@@ -15,10 +15,8 @@
 int	ft_puthex_fd(unsigned int n, char c, int fd)
 {
 	char	*hex;
-	int		len;
 	int		i = 0;
 
-	len = 0;
 	hex = "0123456789abcdef";
 	if (c == 'X')
 		hex = "0123456789ABCDEF";

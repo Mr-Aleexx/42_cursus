@@ -14,8 +14,12 @@
 
 int	ft_putnbr_fd(int n, int fd)
 {
+	int	i;
+
+	i = 0;
 	if (n < 0)
 	{
+		i++;
 		ft_putchar_fd('-', fd);
 		if (n == INT_MIN)
 		{
@@ -29,8 +33,8 @@ int	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(n + '0', fd);
 	else
 	{
-		ft_putnbr_fd(n / 10, fd);
+		i += ft_putnbr_fd(n / 10, fd);
 		ft_putnbr_fd(n % 10, fd);
 	}
-	return (1);
+	return (i + 1);
 }

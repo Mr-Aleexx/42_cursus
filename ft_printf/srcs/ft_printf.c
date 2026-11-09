@@ -36,8 +36,6 @@ int	ft_printf(const char *format, ... )
 		else
 			len += ft_putchar_fd(format[i++], STDOUT_FILENO);
 	}
-	if (!format[i])
-		len++;
 	va_end(list);
 	return (len);
 }
