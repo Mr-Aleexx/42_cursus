@@ -20,7 +20,7 @@ int	ft_putstr_fd(char *s, int fd)
 	if (!s)
 	{
 		ft_putstr_fd("(null)", fd);
-		return 0;
+		return 6;
 	}
 
 	while (s[++i])

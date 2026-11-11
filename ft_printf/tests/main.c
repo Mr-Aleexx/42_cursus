@@ -139,7 +139,9 @@ int main(int ac, char*av[])
 {
 	(void)ac;
 	(void)av;
+	ft_printf("\n===========TESTS FT_PRINTF===========\n");
 	ft_printf_tests();
+	ft_printf("\n===========TESTS OG PRINTF===========\n");
 	printf_tests();
 	return 0;
 }
