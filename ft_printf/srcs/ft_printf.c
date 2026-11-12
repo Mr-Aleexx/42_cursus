@@ -26,15 +26,17 @@ int	ft_printf(const char *format, ... )
 	i = 0;
 	while(format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
-			if (format[++i] == '%')
-				len += ft_putchar_fd(format[i++], STDOUT_FILENO);
-			else if (format[i])
-				len += ft_format(&list, &format[i++]);
+			i++;
+			if (format[i] == '%')
+				len += ft_putchar_fd('%', STDOUT_FILENO);
+			else
+				len += ft_format(&list, &format[i]);
 		}
 		else
-			len += ft_putchar_fd(format[i++], STDOUT_FILENO);
+			len += ft_putchar_fd(format[i], STDOUT_FILENO);
+		i++;
 	}
 	va_end(list);
 	return (len);
@@ -56,7 +58,7 @@ int	ft_format(va_list *list, const char *c)
 	else if (*c == 'x' || *c == 'X')
 		i += ft_puthex_fd(va_arg(*list, unsigned int), *c, STDOUT_FILENO);
 	else if (*c == 'p')
-		i += ft_putpointer_fd(va_arg(*list, unsigned int), STDOUT_FILENO);
+		i += ft_putpointer_fd(va_arg(*list, unsigned long long), STDOUT_FILENO);
 	else if (*c == 'c')
 		i += ft_putchar_fd(va_arg(*list, int), STDOUT_FILENO);
 	return (i);

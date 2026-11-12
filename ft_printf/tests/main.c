@@ -71,7 +71,7 @@ void	ft_printf_tests()
 	ft_printf("%d%%\n", 100);
 	ft_printf("No conversions\n");
 	ft_printf("Trailing percent: %");
-
+	ft_printf("%x\n", LONG_MAX);
 }
 
 void	printf_tests()
@@ -133,15 +133,19 @@ void	printf_tests()
 	printf("%d%%\n", 100);
 	printf("No conversions\n");
 	printf("Trailing percent: %");
+	//printf("%d\n",printf("%p\n", LONG_MAX));
 }
 
 int main(int ac, char*av[])
 {
 	(void)ac;
 	(void)av;
-	ft_printf("\n===========TESTS FT_PRINTF===========\n");
-	ft_printf_tests();
 	ft_printf("\n===========TESTS OG PRINTF===========\n");
 	printf_tests();
+	ft_printf("\n===========TESTS FT_PRINTF===========\n");
+	ft_printf_tests();
+	int ret = printf("INT MIN : %d\n", INT_MIN);
+	printf("ret : %d\n", ret);
+	ft_printf("INT MIN : %d\n", INT_MIN);
 	return 0;
 }

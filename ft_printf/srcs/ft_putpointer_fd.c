@@ -12,8 +12,13 @@
 
 #include "../includes/ft_printf.h"
 
-int	ft_putpointer_fd(unsigned int n, int fd)
+int	ft_putpointer_fd(unsigned long long n, int fd)
 {
+	if (n == 0)
+	{
+		ft_putstr_fd("(nil)", fd);
+		return 5;
+	}
 	ft_putstr_fd("0x", fd);
 	return (2 + ft_puthex_fd(n, 'x', fd));
 }

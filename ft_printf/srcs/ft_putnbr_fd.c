@@ -19,15 +19,16 @@ int	ft_putnbr_fd(int n, int fd)
 	i = 0;
 	if (n < 0)
 	{
-		i++;
 		ft_putchar_fd('-', fd);
 		if (n == INT_MIN)
 		{
 			ft_putchar_fd('2', fd);
 			n = 147483648;
+			i++;
 		}
 		else
 			n = -n;
+		i++;
 	}
 	if (n < 10)
 		ft_putchar_fd(n + '0', fd);
