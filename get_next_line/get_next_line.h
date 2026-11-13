@@ -6,7 +6,7 @@
 /*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 16:49:28 by alex              #+#    #+#             */
-/*   Updated: 2026/11/12 14:42:35 by alex             ###   ########.fr       */
+/*   Updated: 2026/11/13 19:13:01 by ahazet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <string.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10000000
+#  define BUFFER_SIZE 42
 # endif
 
 //core

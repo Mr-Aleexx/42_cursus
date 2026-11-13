@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl_tests.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
+/*   By: ahazet <alex.hazet@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/11 16:47:10 by alex              #+#    #+#             */
-/*   Updated: 2026/11/12 14:42:03 by alex             ###   ########.fr       */
+/*   Created: 2026/11/13 18:58:13 by ahazet            #+#    #+#             */
+/*   Updated: 2026/11/13 19:06:28 by ahazet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 int main(int ac, char *av[])
 {
-	(void)ac;
-	(void)av;
 
-	int fd = open("./gnl_test1.txt", O_RDONLY);
-	char *s;
+	if (ac != 2)
+		return (0);
+	int fd = open(av[1], O_RDONLY);
 
-	while((s = get_next_line(fd)))
+	char *line;
+
+	while ((line = get_next_line(fd)))
 	{
-		printf("%s", s);
-		free(s);
+		printf("%s", line);
+		free(line);
 	}
-
+	free(line);
 	return 0;
 }

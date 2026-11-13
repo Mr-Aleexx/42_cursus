@@ -6,7 +6,7 @@
 /*   By: alex <alex.hazet@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 16:48:50 by alex              #+#    #+#             */
-/*   Updated: 2026/11/12 14:45:09 by alex             ###   ########.fr       */
+/*   Updated: 2026/11/13 19:19:40 by ahazet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,25 @@ static char	*join_next_line(char *buffer, int fd)
 	int	line;
 
 	line = -1;
-	char temp_buf[BUFFER_SIZE + 1];
+	char *temp_buf;
 
-	while (++line <= BUFFER_SIZE)
-		temp_buf[line] = '\0';
+	temp_buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	temp_buf[0] = '\0';
 	line = 1;
 	while(!ft_strchr(temp_buf,'\n') && line)
 	{
 		line = read(fd, temp_buf, BUFFER_SIZE);
-		temp_buf[line] = '\0';
 		if (line < 0 || (!line && !buffer))
-			return (NULL);
+			return (free(temp_buf), NULL);
+		temp_buf[line] = '\0';
 		if (!buffer)
 			buffer = ft_strdup(temp_buf);
 		else
 			buffer = ft_strjoin(buffer, temp_buf);
 		if (!buffer)
-			return (NULL);
+			return (free(temp_buf), NULL);
 	}
+	free(temp_buf);
 	return (buffer);
 }
 
