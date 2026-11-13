@@ -23,7 +23,6 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *format, ... );
-int		ft_format(va_list *list, const char *c);
 
 int	ft_putnbr_fd(int n, int fd);
 int	ft_putchar_fd(char c, int fd);

@@ -12,6 +12,27 @@
 
 #include "../includes/ft_printf.h"
 
+static int	ft_format(va_list *list, const char *c)
+{
+	int	i;
+
+	i = 0;
+	if (*c == 'd')
+		i += ft_putnbr_fd(va_arg(*list, int), STDOUT_FILENO);
+	else if (*c == 'i')
+		i += ft_putnbr_fd(va_arg(*list, int), STDOUT_FILENO);
+	else if (*c == 'u')
+		i += ft_putunbr_fd(va_arg(*list, unsigned int), STDOUT_FILENO);
+	else if (*c == 's')
+		i += ft_putstr_fd(va_arg(*list, char *), STDOUT_FILENO);
+	else if (*c == 'x' || *c == 'X')
+		i += ft_puthex_fd(va_arg(*list, unsigned int), *c, STDOUT_FILENO);
+	else if (*c == 'p')
+		i += ft_putpointer_fd(va_arg(*list, unsigned long long), STDOUT_FILENO);
+	else if (*c == 'c')
+		i += ft_putchar_fd(va_arg(*list, int), STDOUT_FILENO);
+	return (i);
+}
 
 int	ft_printf(const char *format, ... )
 {
@@ -40,27 +61,5 @@ int	ft_printf(const char *format, ... )
 	}
 	va_end(list);
 	return (len);
-}
-
-int	ft_format(va_list *list, const char *c)
-{
-	int	i;
-
-	i = 0;
-	if (*c == 'd')
-		i += ft_putnbr_fd(va_arg(*list, int), STDOUT_FILENO);
-	else if (*c == 'i')
-		i += ft_putnbr_fd(va_arg(*list, int), STDOUT_FILENO);
-	else if (*c == 'u')
-		i += ft_putunbr_fd(va_arg(*list, unsigned int), STDOUT_FILENO);
-	else if (*c == 's')
-		i += ft_putstr_fd(va_arg(*list, char *), STDOUT_FILENO);
-	else if (*c == 'x' || *c == 'X')
-		i += ft_puthex_fd(va_arg(*list, unsigned int), *c, STDOUT_FILENO);
-	else if (*c == 'p')
-		i += ft_putpointer_fd(va_arg(*list, unsigned long long), STDOUT_FILENO);
-	else if (*c == 'c')
-		i += ft_putchar_fd(va_arg(*list, int), STDOUT_FILENO);
-	return (i);
 }
 
